@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> Adicionar novo usuário </h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit"> Salvar </button>
+</form>
+
+{% if usuario %}
+<a href="{% url 'delete_usuarios' usuario.id%}"> Delete </a>
+{% endif %}
+
+{% endblock %}

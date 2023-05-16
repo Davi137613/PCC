@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for usuario in usuarios %}
+<a href="{% url 'update_usuarios' usuario.id %}">
+  <li> {{ usuario.description }}</li>
+</a>
+{% endfor %}
+
+<a href="{% url 'create_usuarios %}"> Novo usuário </a>
+
+
+
+{% endblock %}
